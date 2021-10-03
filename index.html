@@ -22,8 +22,25 @@
       <button @click="addGoal">Add Goal</button>
       <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
       <ul v-else>
-        <li v-for="goal of goals">{{ goal }}</li>
+        <li v-for="(goal, index) of goals">{{ goal }} - {{ index }}</li>
       </ul>
+
+      <!-- v-for can be used to output a range of numbers -->
+      <!-- <ul>
+        <li v-for="num in 10">{{ num }}</li>
+      </ul> -->
+
+      <!-- <ul> -->
+        <!-- both approaches work -->
+        <!-- <li v-for="(value, key) in {name: 'Angela', age: 32}">{{ key }}: {{ value }}</li> -->
+
+        <!-- better for real apps -->
+        <!-- <li v-for="(value, key) in person">{{ key }}: {{ value }}</li> -->
+
+        <!-- can get index of object's property = rarely used -->
+        <!-- <li v-for="(value, key, index) in {name: 'Angela', age: 32}">{{ key }}: {{ value }} - {{ index }}</li> -->
+        <!-- <li v-for="(value, key, index) in person">{{ key }}: {{ value }} - {{ index }}</li> -->
+      <!-- </ul> -->
     </section>
   </body>
 </html>
