@@ -20,17 +20,10 @@
       <h2>My course goals</h2>
       <input type="text" v-model="enteredGoalValue"/>
       <button @click="addGoal">Add Goal</button>
-      <!-- As a rule of thumb, use v-if -->
       <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
-      <ul v-else v-for="goal in goals">
-        <li>{{ goal }}</li>
+      <ul v-else>
+        <li v-for="goal in goals">{{ goal }}</li>
       </ul>
-
-      <!-- Only use v-show when an element's visibility status changes a lot -->
-      <!-- <p v-show="goals.length === 0">No goals have been added yet - please start adding some!</p>
-      <ul v-show="goals.length > 0" v-for="goal in goals">
-        <li>{{ goal }}</li>
-      </ul> -->
     </section>
   </body>
 </html>
